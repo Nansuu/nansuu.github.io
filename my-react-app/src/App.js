@@ -12,6 +12,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <button onClick={handleClick}>Click Me!</button>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -21,11 +22,9 @@ function App() {
           Learn React
         </a>
         <div className="App">
-      <header className="App-header">
         <h1>Welcome to My React App</h1>
         <p>This is a simple React application.</p>
         <button onClick={handleClick}>Click Me!</button>
-      </header>
     </div>
       </header>
     </div>
