@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-      localStorage.setItem('gtmId','GTM-KG2Z5TWR');
+      localStorage.setItem('gtmId','GTM-WSQ88833');
       localStorage.setItem('gtagId', 'G-KNTFHC41QZ');
       localStorage.setItem('optimizeNextId', 'TXZ3SJ9X');
   const handleClick = () => {
