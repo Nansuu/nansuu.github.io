@@ -9,13 +9,21 @@
   r[o][j].add(e+t);setTimeout(function(){if(r[o][j].contains(e+t)){r[o][j].remove(e+t);p['_'+t]=0}},c)
   })(window,document,'documentElement','classList','loading',2000,localStorage.getItem('optimizeNextId'))</script>
   <!-- End Optimize Next -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNTFHC41QZ"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNTFHC41QZ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
   
     gtag('config',localStorage.getItem('gtagId'));
+    
+  </script> -->
+  <script>
+    // Set the async attribute and the src attribute with the GTAG ID
+    document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id=' + localStorage.getItem('gtagId');
+  </script>
+  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); 
+    gtag('config', localStorage.getItem('gtagId'));
   </script>
   <!-- Google Tag Manager -->
 <!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
