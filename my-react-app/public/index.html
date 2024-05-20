@@ -2,7 +2,7 @@
 <html lang="en">
 
 <!-- Optimize Next -->
-<script>console.log(localStorage.getItem('gtagId'));
+<script>console.log(localStorage.getItem('optimizeNextId'));
 (function(p,r,o,j,e,c,t,g){
   p['_'+t]={};g=r.createElement('script');g.src='https://www.googletagmanager.com/gtm.js?id=GTM-'+t;r[o].prepend(g);
   g=r.createElement('style');g.innerText='.'+e+t+'{visibility:hidden!important}';r[o].prepend(g);
@@ -12,18 +12,11 @@
    <!-- Google Tag Manager UAT Prod -->
    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',localStorage.getItem('gtmId'));</script>
    <!-- End Google Tag Manager -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-KNTFHC41QZ"></script>
+  <script async id="gtagScript"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-  
-    gtag('config',localStorage.getItem('gtagId'));
-    
-  </script> -->
-  <script>
+    console.log(localStorage.getItem('gtagId'));
     // Set the async attribute and the src attribute with the GTAG ID
-    document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id=G-KNTFHC41QZ';
+    document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id=' + localStorage.getItem('gtagId');
   </script>
   <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); 
     gtag('config', localStorage.getItem('gtagId'));
@@ -67,6 +60,12 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <body>
+    <iframe id="myFrame" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      <script>
+        console.log(localStorage.getItem('gtmId'));
+        // Set the async attribute and the src attribute with the GTM ID
+        document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + localStorage.getItem('gtmId');
+      </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
