@@ -22,15 +22,8 @@
     gtag('config', localStorage.getItem('gtagId'));
   </script>
   <script>
-    (function() {
-      // Retrieve the GTM ID from localStorage
-      var gtmId = localStorage.getItem('gtmId');
-      // If GTM ID is available, update the src attribute of the noscript iframe
-      if (gtmId) {
-        var iframe = document.getElementById('gtmNoScript').querySelector('iframe');
-        iframe.src = 'https://www.googletagmanager.com/ns.html?id=' + gtmId;
-      }
-    })();
+    // Set the async attribute and the src attribute with the GTAG ID
+    document.getElementById('gtmScript').src = 'https://www.googletagmanager.com/ns.html?id=' + localStorage.getItem('gtmId');
   </script>
   <head>
     <meta charset="utf-8" />
@@ -59,9 +52,10 @@
     <title>React App</title>
   </head>
   <body>
-    <noscript id="gtmNoScript">
-      <iframe src="https://www.googletagmanager.com/ns.html?id=" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
+    <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe id="gtmScript"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
