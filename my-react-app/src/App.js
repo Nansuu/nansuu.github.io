@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+      localStorage.setItem('gtmId','GTM-KG2Z5TWR');
+      localStorage.setItem('gtagId', 'G-H2ZZY9QWSL');
+      localStorage.setItem('optimizeNextId', 'MC2JW2NP');
   const handleClick = () => {
     alert('Button clicked!');
   };
