@@ -52,12 +52,18 @@
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe id="myFrame"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+<noscript>
+  <iframe id="gtmFrame" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   <script>
-    document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + localStorage.getItem('gtmId');
+    (function() {
+      var gtmId = localStorage.getItem('gtmId'); // Replace this with your dynamic GTM ID
+      var iframe = document.getElementById('gtmFrame');
+      var src = "https://www.googletagmanager.com/ns.html?id=" + gtmId;
+      iframe.setAttribute('src', src);
+    })();
   </script>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--
