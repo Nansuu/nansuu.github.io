@@ -1,46 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Optimize Next -->
-<script>(function(p,r,o,j,e,c,t,g){
-  p['_'+t]={};g=r.createElement('script');g.src='https://www.googletagmanager.com/gtm.js?id=GTM-'+t;r[o].prepend(g);
-  g=r.createElement('style');g.innerText='.'+e+t+'{visibility:hidden!important}';r[o].prepend(g);
-  r[o][j].add(e+t);setTimeout(function(){if(r[o][j].contains(e+t)){r[o][j].remove(e+t);p['_'+t]=0}},c)
-  })(window,document,'documentElement','classList','loading',2000,localStorage.getItem('optimizeNextId'))
-</script>
-<!-- End Optimize Next -->
-   <!-- Google Tag Manager UAT Prod -->
-   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',localStorage.getItem('gtmId'));</script>
-   <!-- End Google Tag Manager -->
-  <script async id="gtagScript"></script>
-  <script>
-    console.log(localStorage.getItem('gtagId'));
-    // Set the async attribute and the src attribute with the GTAG ID
-    document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id=' + localStorage.getItem('gtagId');
-  </script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); 
-    gtag('config', localStorage.getItem('gtagId'));
-  </script>
-  <script>
-    // Set the async attribute and the src attribute with the GTAG ID
-    document.getElementById('gtmScript').src = 'https://www.googletagmanager.com/ns.html?id=' + localStorage.getItem('gtmId');
-  </script>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -49,16 +22,42 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe id="gtmScript"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>React App</title>
+  <!-- Optimize Next -->
+  <script>(function (p, r, o, j, e, c, t, g) {
+      p['_' + t] = {}; g = r.createElement('script'); g.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-' + t; r[o].prepend(g);
+      g = r.createElement('style'); g.innerText = '.' + e + t + '{visibility:hidden!important}'; r[o].prepend(g);
+      r[o][j].add(e + t); setTimeout(function () { if (r[o][j].contains(e + t)) { r[o][j].remove(e + t); p['_' + t] = 0 } }, c)
+    })(window, document, 'documentElement', 'classList', 'loading', 2000, localStorage.getItem('optimizeNextId'))
+  </script>
+  <!-- End Optimize Next -->
+  <script>(function (w, d, s, l, i) {
+              w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                  new Date().getTime(), event: 'gtm.js'
+              }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                  'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', localStorage.getItem('gtmId'));</script>
+  <!-- Google tag (gtag.js) -->
+  <script async id="gtagScript"></script>
+  <script>
+    // Set the async attribute and the src attribute with the GTAG ID
+    document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id=' + localStorage.getItem('gtagId');
+  </script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date());
+    gtag('config', localStorage.getItem('gtagId'));
+  </script>
+</head>
+
+<body>
+  <iframe id="myFrame" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  <script>
+    document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + localStorage.getItem('gtmId');
+  </script>ß
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -68,5 +67,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+</body>
+
 </html>
