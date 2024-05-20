@@ -21,14 +21,17 @@
   <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); 
     gtag('config', localStorage.getItem('gtagId'));
   </script>
-  <!-- Google Tag Manager -->
-<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-WSQ88833');</script> -->
-  <!-- End Google Tag Manager -->
-  <!-- Google tag (gtag.js) -->
+  <script>
+    (function() {
+      // Retrieve the GTM ID from localStorage
+      var gtmId = localStorage.getItem('gtmId');
+      // If GTM ID is available, update the src attribute of the noscript iframe
+      if (gtmId) {
+        var iframe = document.getElementById('gtmNoScript').querySelector('iframe');
+        iframe.src = 'https://www.googletagmanager.com/ns.html?id=' + gtmId;
+      }
+    })();
+  </script>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
@@ -56,11 +59,9 @@
     <title>React App</title>
   </head>
   <body>
-    <iframe id="myFrame" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-      <script>
-        // Set the async attribute and the src attribute with the GTM ID
-        document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + localStorage.getItem('gtmId');
-      </script>
+    <noscript id="gtmNoScript">
+      <iframe src="https://www.googletagmanager.com/ns.html?id=" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
