@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-      localStorage.setItem('gtmId','GTM-KG2Z5TWR');
-      localStorage.setItem('gtagId', 'G-2YRC45H4JD');
+      localStorage.setItem('gtmId', 'GTM-KG2Z5TWR');
+      localStorage.setItem('gtagId', 'G-H2ZZY9QWSL');
       localStorage.setItem('optimizeNextId', 'MC2JW2NP');
   const handleClick = () => {
     alert('Button clicked!');
@@ -26,7 +26,7 @@ function App() {
         <div className="App">
         <h1>Welcome to My React App</h1>
         <p>This is a simple React application.</p>
-        <button onClick={handleClick}>Click nsppw1!</button>
+        <button onClick={handleClick}>Click nsppw2!</button>
     </div>
       </header>
     </div>
