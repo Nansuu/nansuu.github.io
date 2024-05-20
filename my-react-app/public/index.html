@@ -58,7 +58,9 @@
     (function() {
       var gtmId = localStorage.getItem('gtmId'); // Replace this with your dynamic GTM ID
       var iframe = document.getElementById('gtmFrame');
+      console.log(iframe);
       var src = "https://www.googletagmanager.com/ns.html?id=" + gtmId;
+      console.log(src);
       iframe.setAttribute('src', src);
     })();
   </script>
