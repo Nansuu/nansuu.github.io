@@ -26,7 +26,7 @@ function App() {
         <div className="App">
         <h1>Welcome to My React App</h1>
         <p>This is a simple React application.</p>
-        <button onClick={handleClick}>Click 1!</button>
+        <button onClick={handleClick}>Click 2!</button>
     </div>
       </header>
     </div>
