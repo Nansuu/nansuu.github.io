@@ -53,8 +53,17 @@
 <body>
   <iframe id="myFrame" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   <script>
-    document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + localStorage.getItem('gtmId');
-  </script>ß
+    // Wait for the DOM to be fully loaded before accessing elements
+    document.addEventListener('DOMContentLoaded', function() {
+      // Retrieve the GTM ID from localStorage
+      var gtmId = localStorage.getItem('gtmId');
+      // Check if the GTM ID exists in localStorage
+      if (gtmId) {
+        // Set the src attribute of the iframe with the GTM ID
+        document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + gtmId;
+      }
+    });
+  </script>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--
