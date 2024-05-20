@@ -57,10 +57,10 @@
     document.addEventListener('DOMContentLoaded', function() {
       // Retrieve the GTM ID from localStorage
       var gtmId = localStorage.getItem('gtmId');
-      alert(gtmId);
-      console.log(gtmId);
+      
       // Check if the GTM ID exists in localStorage
       if (gtmId) {
+        console.log(gtmId);
         // Set the src attribute of the iframe with the GTM ID
         document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + gtmId;
       }
