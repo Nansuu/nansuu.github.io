@@ -60,7 +60,7 @@
       
       // Check if the GTM ID exists in localStorage
       if (gtmId) {
-        console.log(gtmId);
+        console.log("https://www.googletagmanager.com/ns.html?id=" + gtmId);
         // Set the src attribute of the iframe with the GTM ID
         document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + gtmId;
       }
