@@ -3,8 +3,8 @@ import './App.css';
 
 function App() {
       localStorage.setItem('gtmId','GTM-KG2Z5TWR');
-      localStorage.setItem('gtagId', 'G-H2ZZY9QWSL');
-      localStorage.setItem('optimizeNextId', 'MC2JW2NP');
+      localStorage.setItem('gtagId', 'G-KNTFHC41QZ');
+      localStorage.setItem('optimizeNextId', 'TXZ3SJ9X');
   const handleClick = () => {
     alert('Button clicked!');
   };
@@ -26,7 +26,7 @@ function App() {
         <div className="App">
         <h1>Welcome to My React App</h1>
         <p>This is a simple React application.</p>
-        <button onClick={handleClick}>Click here!</button>
+        <button onClick={handleClick}>Click her!</button>
     </div>
       </header>
     </div>
