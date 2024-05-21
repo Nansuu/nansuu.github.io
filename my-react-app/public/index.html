@@ -52,19 +52,11 @@
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript>
-  <iframe id="gtmFrame" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  <iframe id="myFrame" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   <script>
-    (function() {
-      var gtmId = localStorage.getItem('gtmId'); // Replace this with your dynamic GTM ID
-      var iframe = document.getElementById('gtmFrame');
-      console.log(iframe);
-      var src = "https://www.googletagmanager.com/ns.html?id=" + gtmId;
-      console.log(src);
-      iframe.setAttribute('src', src);
-    })();
+    // Set the async attribute and the src attribute with the GTM ID
+    document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + localStorage.getItem('gtmId');
   </script>
-</noscript>
 <!-- End Google Tag Manager (noscript) -->
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
