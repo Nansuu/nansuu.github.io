@@ -38,39 +38,20 @@
               }); var f = d.getElementsByTagName(s)[0],
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                   'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', localStorage.getItem('gtmId'));</script>
+            })(window, document, 'script', 'dataLayer', "%REACT_APP_OPTIMIZE_NEXT_ID%");</script>
   <!-- Google tag (gtag.js) -->
   <script async id="gtagScript"></script>
   <script>
     // Set the async attribute and the src attribute with the GTAG ID
-    document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id=' + localStorage.getItem('gtagId');
+    document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id="%REACT_APP_GTAG_ID%"';
   </script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date());
-    gtag('config', localStorage.getItem('gtagId'));
+    gtag('config',  "%REACT_APP_GTAG_ID%");
   </script>
 </head>
 
 <body>
-  <script>
-    // Retrieve the ID from local storage
-    var idFromLocalStorage = localStorage.getItem('gtmId');
-
-    // Check if the ID exists
-    if (idFromLocalStorage) {
-        // Construct the URL for the iframe with the ID
-        var iframeUrl = 'https://www.googletagmanager.com/ns.html?id=' + idFromLocalStorage;
-
-        // Find the iframe element
-        var iframe = document.querySelector('iframe');
-
-        // Update the iframe's src attribute with the constructed URL
-        iframe.src = iframeUrl;
-    }
-</script>
-
-<!-- Google Tag Manager iframe -->
-<iframe src='' height="0" width="0" style="display:none;visibility:hidden"></iframe>
-<noscript><iframe src='https://www.googletagmanager.com/ns.html?id=' height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src='https://www.googletagmanager.com/ns.html?id="%REACT_APP_GTM_ID%"' height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--
