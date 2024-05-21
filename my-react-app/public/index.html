@@ -43,7 +43,7 @@
   <script async id="gtagScript"></script>
   <script>
     // Set the async attribute and the src attribute with the GTAG ID
-    document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id="%REACT_APP_GTAG_ID%"';
+    document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id=' +"%REACT_APP_GTAG_ID%";
   </script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date());
     gtag('config',  "%REACT_APP_GTAG_ID%");
@@ -51,8 +51,9 @@
 </head>
 
 <body>
-<noscript><iframe src='https://www.googletagmanager.com/ns.html?id="%REACT_APP_GTM_ID%"' height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+<!-- Google Tag Manager -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%REACT_APP_GTM_ID%" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager -->  <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--
       This HTML file is a template.
