@@ -51,13 +51,26 @@
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <iframe id="myFrame" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   <script>
-    // Set the async attribute and the src attribute with the GTM ID
-    document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + localStorage.getItem('gtmId');
-  </script>
-<!-- End Google Tag Manager (noscript) -->
+    // Retrieve the ID from local storage
+    var idFromLocalStorage = localStorage.getItem('gtmId');
+
+    // Check if the ID exists
+    if (idFromLocalStorage) {
+        // Construct the URL for the iframe with the ID
+        var iframeUrl = 'https://www.googletagmanager.com/ns.html?id=' + idFromLocalStorage;
+
+        // Find the iframe element
+        var iframe = document.querySelector('iframe');
+
+        // Update the iframe's src attribute with the constructed URL
+        iframe.src = iframeUrl;
+    }
+</script>
+
+<!-- Google Tag Manager iframe -->
+<iframe src='' height="0" width="0" style="display:none;visibility:hidden"></iframe>
+<noscript><iframe src='https://www.googletagmanager.com/ns.html?id=' height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <!--
