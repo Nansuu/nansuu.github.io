@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja"><head>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Optimize Next -->
     <script>
-    (function(p,r,o,j,e,c,t,g){
-      p['_'+t]={};g=r.createElement('script');g.src='https://www.googletagmanager.com/gtm.js?id=GTM-'+t;r[o].prepend(g);
-      g=r.createElement('style');g.innerText='.'+e+t+'{visibility:hidden!important}';r[o].prepend(g);
-      r[o][j].add(e+t);setTimeout(function(){if(r[o][j].contains(e+t)){r[o][j].remove(e+t);p['_'+t]=0}},c)
-      })(window,document,'documentElement','classList','loading',2000,"22222")
+      $.getJSON("./../../../config.json", function(data) {
+          // Check if data contains gtmid
+          if (data && data.REACT_APP_OPTIMIZE_NEXT_ID) {
+              (function(p,r,o,j,e,c,t,g){
+                p['_'+t]={};g=r.createElement('script');g.src='https://www.googletagmanager.com/gtm.js?id=GTM-'+t;r[o].prepend(g);
+                g=r.createElement('style');g.innerText='.'+e+t+'{visibility:hidden!important}';r[o].prepend(g);
+                r[o][j].add(e+t);setTimeout(function(){if(r[o][j].contains(e+t)){r[o][j].remove(e+t);p['_'+t]=0}},c)
+                })(window,document,'documentElement','classList','loading',2000,data.REACT_APP_OPTIMIZE_NEXT_ID)
+              }
+            }
+          );
     </script>
     <!-- End Optimize Next -->
     <meta charset="utf-8">
@@ -20,28 +26,55 @@
     <link rel="stylesheet" href="/resources/css/font-awesome.min.css">
     <link rel="stylesheet" href="/resources/css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
-    <title><%= JSON.stringify(htmlWebpackPlugin.options.gtmId) %>【公式】お申込み｜がんを経験した女性を支えるがん保険(乳がん・子宮がん・卵巣がん経験者専用がん保険)｜MICIN（マイシン）少額短期保険｜持病(がん)があっても申込める保険</title>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer',"%REACT_APP_GTM_ID%");
+    <title>【公式】お申込み｜がんを経験した女性を支えるがん保険(乳がん・子宮がん・卵巣がん経験者専用がん保険)｜MICIN（マイシン）少額短期保険｜持病(がん)があっても申込める保険</title>
+    <script>
+      $.getJSON("./../../../config.json", function(data) {
+          // Check if data contains gtmid
+          if (data && data.REACT_APP_GTM_ID) {
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer',data.REACT_APP_GTM_ID);
+            }
+          }
+        )
     </script>
     <!-- Google tag (gtag.js) -->
     <script async id="gtagScript"></script>
     <script>
-      // Set the async attribute and the src attribute with the GTAG ID
-      document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id=' + "%REACT_APP_GTAG_ID%";
+       $.getJSON("./../../../config.json", function(data) {
+          // Check if data contains gtmid
+          if (data && data.REACT_APP_GTAG_ID) {
+            document.getElementById('gtagScript').src = 'https://www.googletagmanager.com/gtag/js?id=' + data.REACT_APP_GTAG_ID;
+          }
+        }
+      )
     </script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); 
-      gtag('config', "%REACT_APP_GTAG_ID%", {
-        'user_id': localStorage.getItem('contractNo')
-      });
+    <script>
+       $.getJSON("./../../../config.json", function(data) {
+          // Check if data contains gtmid
+          if (data && data.REACT_APP_GTAG_ID) {
+            window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); 
+              gtag('config', data.REACT_APP_GTAG_ID, {
+                'user_id': localStorage.getItem('contractNo')
+              });
+            }
+          }
+        )
     </script>
     </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src='https://www.googletagmanager.com/ns.html?id=%REACT_APP_GTM_ID%' height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <iframe id="myFrame" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <script>
+       $.getJSON("./../../../config.json", function(data) {
+          if (data && data.REACT_APP_GTM_ID) {
+            document.getElementById("myFrame").src = "https://www.googletagmanager.com/ns.html?id=" + data.REACT_APP_GTM_ID;
+          }
+        }
+      )
+    </script>
     <!-- End Google Tag Manager (noscript) -->
     <div>
       <div class="container-fluid-cus">
